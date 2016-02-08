@@ -18,6 +18,8 @@ up:
 
 	docker-compose up -d
 
+	firefox https://beta.dina-web.net
+
 stop:
 	docker-compose stop
 

@@ -7,7 +7,7 @@ fs:
     - ./nginx-logs:/etc/nginx/logs:rw
 
 ui:
-  image: nginx
+  build: .
   ports:
     - "80:80"
     - "443:443"
