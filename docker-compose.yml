@@ -1,8 +1,6 @@
 fs:
   image: tianon/true
   volumes:
-    - ./nginx-html:/usr/share/nginx/html:rw
-    - ./nginx-conf:/etc/nginx/conf.d:rw
     - ./nginx-certs:/etc/nginx/ssl:rw
     - ./nginx-logs:/etc/nginx/logs:rw
 

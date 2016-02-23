@@ -8,8 +8,8 @@ clean: stop rm
 	sudo chown -R $(ME) nginx-conf nginx-html nginx-certs nginx-logs
 
 build:
-	docker build --no-cache . 
-#	docker build --no-cache -t $(NAME):$(VERSION) . 
+	docker-compose build --no-cache ui
+#	docker build --no-cache -t $(NAME):$(VERSION) .
 
 up:
 	echo "setting up certificates"
@@ -17,8 +17,6 @@ up:
 	cp key.pem nginx-certs/cert.key
 
 	docker-compose up -d
-
-	firefox https://beta.dina-web.net
 
 stop:
 	docker-compose stop
