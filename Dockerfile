@@ -2,7 +2,7 @@ FROM nginx
 
 RUN apt-get install tar
 
-ADD https://github.com/DINA-Web/collections-ui/releases/download/v0.1.2/release.tar.gz /tmp/
+ADD https://github.com/DINA-Web/collections-ui/releases/download/v0.1.3/release.tar.gz /tmp/
 
 RUN cd /tmp && tar -xvzf /tmp/release.tar.gz && \
     mv /tmp/dw-collection-manager/* /usr/share/nginx/html && \
