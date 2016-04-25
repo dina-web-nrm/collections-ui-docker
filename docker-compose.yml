@@ -5,7 +5,7 @@ fs:
     - ./nginx-logs:/etc/nginx/logs:rw
 
 ui:
-  build: .
+  image: caalle/cmuii
   environment:
     - VIRTUAL_HOST=beta-cm.dina-web.net
     - VIRTUAL_PORT=443
