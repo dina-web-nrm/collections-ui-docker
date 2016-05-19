@@ -1,16 +1,11 @@
 fs:
   image: tianon/true
   volumes:
-    - ./nginx-certs:/etc/nginx/ssl:rw
     - ./nginx-logs:/etc/nginx/logs:rw
 
 ui:
   image: dina/collections-ui
   environment:
     - VIRTUAL_HOST=beta-cm.dina-web.net
-    - VIRTUAL_PORT=443
-    - VIRTUAL_PROTO=https
-    - CERT_NAME=shared
-
   volumes_from:
     - fs
