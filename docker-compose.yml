@@ -1,11 +1,14 @@
-fs:
-  image: tianon/true
-  volumes:
-    - ./nginx-logs:/etc/nginx/logs:rw
+version: '3.1'
 
-ui:
-  image: dina/collections-ui
-  environment:
-    - VIRTUAL_HOST=beta-cm.dina-web.net
-  volumes_from:
-    - fs
+services:  
+  ui:
+    image: dina/collections-ui-deprecated:v0.1
+    environment:
+      - VIRTUAL_HOST=beta-cm.dina-web.net
+    volumes:
+      - ./nginx-logs:/etc/nginx/logs:rw
+
+networks:
+  default:
+    external:
+      name: dwproxy_default
