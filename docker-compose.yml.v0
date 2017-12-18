@@ -1,0 +1,11 @@
+fs:
+  image: tianon/true
+  volumes:
+    - ./nginx-logs:/etc/nginx/logs:rw
+
+ui:
+  image: dina/collections-ui
+  environment:
+    - VIRTUAL_HOST=beta-cm.dina-web.net
+  volumes_from:
+    - fs

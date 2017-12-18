@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:  
+  ui:
+    image: dina/collections-ui-deprecated:v0.1
+    environment:
+      - VIRTUAL_HOST=beta-cm.dina-web.net
+    volumes:
+      - ./nginx-logs:/etc/nginx/logs:rw
+
+networks:
+  default:
+    external:
+      name: dwproxy_default
