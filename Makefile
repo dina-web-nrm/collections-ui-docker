@@ -15,5 +15,8 @@ stop:
 rm:
 	docker-compose rm -vf
 
+down:	
+	docker-compose down
+
 reload:
 	docker exec -i collectionsuidocker_ui_1 nginx -s reload
